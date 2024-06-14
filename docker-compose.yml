@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  anvil-node:
+      build:
+        context: ./anvil
+        dockerfile: Dockerfile
+      container_name: anvil-node
+      ports:
+        - "8545:8545"
+      # network: "host"
+        
+  monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blockchain-monitor
+    # ports:
+    #   - "8100:8100"
+    depends_on:
+      - anvil-node
+    environment:
+      - NODE_URL=http://anvil-node:8545
+
+
