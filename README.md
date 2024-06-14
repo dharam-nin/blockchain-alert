@@ -44,15 +44,14 @@ git clone https://github.com/dharam-nin/blockchain-alert
    
    run command: 
    
-    `go run .`
+    `go get all`
 
 
-3. **Optional If you face any issues related package** 
+3. **To include env variables and start the monitoring agent** 
 
    run command:
    
-    `go get all`
-
+    `sh start.sh`
 
 # Approach Explanation
 ## Blockchain Monitoring
